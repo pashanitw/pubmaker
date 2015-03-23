@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../css/shared-culture.css" />
+</head>
+<body>
+<section class="base">
+    <hgroup>
+        <h1>{{Heading}}</h1>
+        <h2>{{heading2}}</h2>
+    </hgroup>
+
+    {{#each components}}
+        <p>{{{markup}}}</p>
+    {{/each}}
+</section>
+
+</body>
+</html>

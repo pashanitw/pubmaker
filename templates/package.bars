@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="uid" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:title id="title">{{bookTitle}}</dc:title>
+        <dc:creator>{{author.name}}</dc:creator>
+        <dc:identifier id="uid">code.google.com.epub-samples.cc-shared-culture</dc:identifier>
+        <dc:language>{{language}}</dc:language>
+        <meta property="dcterms:modified">{{modifiedDate}}</meta>
+        <dc:publisher>{{publisher}}</dc:publisher>
+        <dc:contributor>{{contributor}}</dc:contributor>
+        <dc:description>{{description}}</dc:description>
+        <dc:rights>{{rights}}</dc:rights>
+        <link rel="cc:license" href={{licenceLink}}/>
+        <meta property="cc:attributionURL">{{contributorUrl}}</meta>
+        <meta property="rendition:layout">{{renditionType}}</meta>
+        <meta property="rendition:orientation">{{orientation}}</meta>
+        <meta property="rendition:spread">{{renditionSpread}}</meta>
+    </metadata>
+    <manifest>
+        {{#each fonts}}
+        <item id={{id}} href={{fontUrl}} media-type={{mediaType}}/>
+        {{/each}}
+        {{#each images}}
+            <item id={{id}} href={{imgUrl}} media-type={{mediaType}} properties={{properties}}/>
+        {{/each}}
+        {{#each videos}}
+            <item id={{id}} href={{imgUrl}} media-type={{mediaType}} properties={{properties}}/>
+        {{/each}}
+        {{#each audios}}
+            <item id={{id}} href={{imgUrl}} media-type={{mediaType}} properties={{properties}}/>
+        {{/each}}
+        {{#each stylesheets}}
+            <item id={{id}} href={{imgUrl}} media-type={{mediaType}} properties={{properties}}/>
+        {{/each}}
+        {{#each js}}
+            <item id={{id}} href={{imgUrl}} media-type={{mediaType}} properties={{properties}}/>
+        {{/each}}
+        {{#each xhtml}}
+        <item id={{id}} href={{imgUrl}} media-type={{mediaType}} properties={{properties}}/>
+        {{/each}}
+    </manifest>
+    <spine>
+        {{#each spineElements}}
+        <itemref idref={{idref}}  properties={{properties}}/>
+        {{/each}}
+        <itemref idref="p30" properties="rendition:layout-pre-paginated  rendition:spread-none"/>
+    </spine>
+</package>
