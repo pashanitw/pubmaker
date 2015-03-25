@@ -1,0 +1,115 @@
+{
+  "epub": 3,
+  "title": "The Study in Scarlet",
+  "authors": ["Arthur Conan Doyle"],
+  "creator": ["D. Casali", "M. Colombo", "A. Morandi", "F. Fortes"],
+  "publisher": "Baker Pubs",
+  "identifier":"code.google.com.epub-samples.cc-shared-culture",
+   "language":"english",
+  "contributors":["pasha shaik"],
+  "date": "2011-08-23",
+  "url": "book://bakerframework.com/books/arthurconandoyle-thestudyinscarlet",
+  "cover": "assets/study-in-scarlet.png",
+  "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu",
+
+  "orientation": "auto",
+  "zoomable": false,
+  "rights":"CopyRight@2012",
+  "licenceUrl":"http://google.com",
+  "contributorUrl":"http://google.com",
+  "renditionType":"reflowable",
+  "spread":"none",
+  "fonts":[
+    {
+      "url":"http://google.com",
+      "type":""
+    },
+    {
+      "url":"http://google.com",
+      "type":""
+    }
+  ],
+  "images":[
+    {
+      "url":"http://google.com",
+      "type":""
+    },
+    {
+      "url":"http://google.com",
+      "type":""
+    }
+  ],
+  "videos":[
+    {
+      "url":"http://google.com",
+      "type":""
+    },
+    {
+      "url":"http://google.com",
+      "type":""
+    }
+  ],
+  "audios":[
+    {
+      "url":"http://google.com",
+      "type":""
+    },
+    {
+      "url":"http://google.com",
+      "type":""
+    }
+  ],
+  "stylesheets":[
+    {
+      "url":"http://google.com",
+      "type":""
+    },
+    {
+      "url":"http://google.com",
+      "type":""
+    }
+  ],
+  "js":[
+    {
+      "url":"http://google.com",
+      "type":""
+    },
+    {
+      "url":"http://google.com",
+      "type":""
+    }
+  ],
+  "contents": [
+    {
+      "name":"cover.html",
+      "properties":"scripted",
+      "spine":{
+        "properties":{
+          "layout":"layout-pre-paginated",
+          "spread":"none"
+        }
+      },
+      "type":"application/xhtml+xml"
+    },
+    {
+      "name":"chapter-1.html",
+      "properties":"scripted",
+      "spine":{
+        "properties":{
+          "layout":"layout-pre-paginated",
+          "spread":"none"
+        }
+      },
+      "type":"application/xhtml+xml"
+    },
+    {
+      "name":"chapter-2.html",
+      "properties":{
+
+      },
+      "spine":{
+        "properties":"scripted"
+      }
+    }
+  ]
+}

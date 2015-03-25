@@ -7,6 +7,15 @@
 <link rel="stylesheet" href="" />
 </head>
 <body>
+<script id="container-template" type="text/x-handlebars-template">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <container xmlns="urn:oasis:names:tc:opendocument:xmlns:container" version="1.0">
+        <rootfiles>
+            <rootfile full-path="EPUB/package.opf" media-type="application/oebps-package+xml"/>
+        </rootfiles>
+    </container>
+
+</script>
 <script id="page-template" type="text/x-handlebars-template">
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE html>
@@ -29,6 +38,80 @@
 
     </body>
     </html>
+
+</script>
+<script id="package-template" type="text/x-handlebars-template">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="uid"
+             prefix="rendition: http://www.idpf.org/vocab/rendition/#">
+        <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <dc:title id="title">{{title}}</dc:title>
+            {{#each authors}}
+            <dc:creator>{{this}}</dc:creator>
+            {{/each}}
+            <dc:identifier id="uid">{{identifier}}</dc:identifier>
+            <dc:language>{{language}}</dc:language>
+            <meta property="dcterms:modified">{{date}}</meta>
+            <dc:publisher>{{publisher}}</dc:publisher>
+            {{#each contributors}}
+            <dc:contributor>{{this}}</dc:contributor>
+            {{/each}}
+            <dc:description>{{description}}</dc:description>
+            <dc:rights>{{rights}}</dc:rights>
+            <link rel="cc:license" href='{{licenceUrl}}'/>
+            <meta property="cc:attributionURL">{{contributorUrl}}</meta>
+            <meta property="rendition:layout">{{renditionType}}</meta>
+            <meta property="rendition:orientation">{{orientation}}</meta>
+            <meta property="rendition:spread">{{spread}}</meta>
+        </metadata>
+        <manifest>
+            {{#each fonts}}
+            <item id='font-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+            {{#each images}}
+            <item id='image-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+            {{#each videos}}
+            <item id='video-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+            {{#each audios}}
+            <item id='audio-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+            {{#each stylesheets}}
+            <item id='css-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+            {{#each js}}
+            <item id='js-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+            {{#each contents}}
+            <item id='page-{{@index}}'
+                  {{#if url}} href='{{url}}' {{/if}}
+            {{#if properties}} media-type='{{type}}'{{/if}}
+            {{#if properties}} properties='{{properties}}' {{/if}}/>
+            {{/each}}
+        </manifest>
+        {{#spine contents}}
+        properties="rendition:{{properties.layout}}  rendition:{{properties.spread}}"
+        {{/spine}}
+    </package>
 
 </script>
 <script src="app/bower_components/jquery/dist/jquery.js"></script>
